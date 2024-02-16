@@ -39,26 +39,27 @@ The JSON data provided here contains the coordinates for cropping the digital im
 The total number of images in the combined corpus is 27,398.
 
 ## Value of the Corpus
-The corpus includes illustrations for every episode of the Bible. There are exegetical interpretations for each one of these episodes. Text and illustration provide juxtaposed and sometimes differing views on each element. The textual captions appear in both Latin and Middle French, providing interesting footholds for linguistic analysis. Two different copies of the *Bible Moralisée* which are 40 or 50 years apart provide differentiating views and variation between them that is worth studying (up through Isaiah).  
+The corpus includes illustrations for every episode of the Bible. There are exegetical interpretations for each one of these episodes. Text and illustration provide juxtaposed and sometimes differing views on each element. The textual captions appear in both Latin and Middle French, providing interesting footholds for linguistic analysis. Two different copies of the *Bible Moralisée* which were created 30 or 40 years apart provide differentiating views and variation between them that is worth studying.  
 
 ## Using the Data
-The API for accessing cropped images from Gallica.bnf.fr is comprised of the following elements:
+The API for accessing cropped images from Gallica.bnf.fr is comprised of key elements as seen in this example:
 ```
 https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f30/746,3052,1817,2301/pct:70/0/native.jpg
 ```
-The manuscript is identified by the 'btv' access number
+- The manuscript is identified by the 'btv' access number
 
-- Manuscript Fr. 167 is btv1b8447300c
-- Manuscript Fr. 166 is btv1b105325870
+    - Manuscript Fr. 167 is btv1b8447300c
+    - Manuscript Fr. 166 is btv1b105325870
 
-The page or "view" number is indicated by the "f" access number (not the same as the folio number).
+- The page or "view" number is indicated by the "f" access number (not the same as the folio number).
 
-The four numbers separated by commas are the coordinates for the x, y, width, and height of the image selection.
+- The four numbers separated by commas are the coordinates for the x, y, width, and height of the image selection.
 
 ## Format of the Data
-This JSON data for these two manuscripts do not constitute IIIF-compliant manifests but can be used in conjunction with those manifests (found here: [Mansucript Fr. 167](https://gallica.bnf.fr/iiif/ark:/12148/btv1b8447300c/manifest.json) and [Mansucript Fr. 166](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/manifest.json)).
+The JSON data for these two manuscripts do not constitute IIIF-compliant manifests but can be used in conjunction with those manifests (found here: [Mansucript Fr. 167](https://gallica.bnf.fr/iiif/ark:/12148/btv1b8447300c/manifest.json) and [Mansucript Fr. 166](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/manifest.json)).
 
-The main body of data is organized under the element "group" (element group[0] includes a summary of the contents for each of the other groups). 
+### group[]
+The main body of image coordinates is organized under the array "group" --Note that group[0] includes a summary of the contents for each of the other groups. A group contains all the selection coordinates for one quadrant of a given page.
 ```
 "group":
 [
@@ -78,13 +79,13 @@ The main body of data is organized under the element "group" (element group[0] i
     {"coord":[15,"1r",2,"B",4,378,2957,1004,1195]},
     {"coord":[15,"1r",2,"B",5,1284,3008,921,1175]},
     {"coord":[15,"1r",2,"B",6,387,4117,1004,1268]},
-    {"coord":[15,"1r",2,"B",7,1257,4117,1001,1236]}]},
+    {"coord":[15,"1r",2,"B",7,1257,4117,1001,1236]}]}, 
 ```
-Within each "coord" element, one finds:
+Within each "coord" array, one finds:
 - the "f" access number
 - the folio number
 - the collation number (which collates the scenes between the two Bibles, e.g., the creation of Adam has the same collation number in both manuscripts)
-- the quadrant on each folio (ABCD). Each quadrant contains two illustrations with captions.
+- the quadrant on each page (ABCD). Each quadrant contains two illustrations with captions.
 - the selection number: each quadrant has coordinates for seven different image selections which are as follows:
 
 1. Duplex: both illustrations with captions
@@ -120,4 +121,79 @@ Within each "coord" element, one finds:
 - the coordinate for width
 - the coordinate for height
 
+### bible[]
+The "bible" array contains the first and last collation numbers that correspond to each book of the Bible. For example, Genesis is found in collations 1-136; Exodus, in collations 137-223, etc.
+
 ## Examples
+An active demonstration of the use of this data for the side-by-side comparison of the two manuscripts can be seen at [https://jessehurlbut.net/2bibles/](https://jessehurlbut.net/2bibles/#).
+
+### Example 1. The first Duplex selection in the Book of Exodus from manuscript Fr. 167
+Having retrieved the group that includes collation 137 (the beginning of Exodus) from Part1_BNF-Fr167.json, we can use the data in selection 1 to create a link to retrieve the Duplex image.
+```
+{"sel":[
+    {"coord":[43,"18r",137,"A",1,174,865,1812,2252]},
+    {"coord":[43,"18r",137,"A",2,78,865,1892,1144]},
+    {"coord":[43,"18r",137,"A",3,78,1932,1902,1185]},
+    {"coord":[43,"18r",137,"A",4,62,748,1119,1176]},
+    {"coord":[43,"18r",137,"A",5,1094,876,875,1144]},
+    {"coord":[43,"18r",137,"A",6,72,1943,1141,1095]},
+    {"coord":[43,"18r",137,"A",7,1106,1927,883,1191]}]},
+```
+
+Selection 1: [https://gallica.bnf.fr/iiif/ark:/12148/btv1b8447300c/f43/174,865,1812,2252/pct:70/0/native.jpg](https://gallica.bnf.fr/iiif/ark:/12148/btv1b8447300c/f43/174,865,1812,2252/pct:70/0/native.jpg)
+
+
+### Example 2. Parse out all the illustrations (without captions) of folio 1r of manuscript Fr. 166
+Having retrieved the four groups that appear on folio 1r from Part2_BNF-Fr166.json, we extract the coordinates for selections 5 (top image of each group) and 7 (bottom image of each group) to create a series of links to retrieve the eight images.
+```
+{"sel":[
+    {"coord":[15,"1r",1,"A",1,334,673,1860,2332]},
+    {"coord":[15,"1r",1,"A",2,110,673,2084,1192]},
+    {"coord":[15,"1r",1,"A",3,350,1804,1838,1185]},
+    {"coord":[15,"1r",1,"A",4,62,348,1327,1400]},
+    {"coord":[15,"1r",1,"A",5,1270,668,923,1208]},
+    {"coord":[15,"1r",1,"A",6,344,1815,1013,1159]},
+    {"coord":[15,"1r",1,"A",7,1250,1799,947,1207]}]},
+{"sel":[
+    {"coord":[15,"1r",2,"B",1,378,2988,1833,2365]},
+    {"coord":[15,"1r",2,"B",2,378,2988,1833,1185]},
+    {"coord":[15,"1r",2,"B",3,378,4117,1833,1220]},
+    {"coord":[15,"1r",2,"B",4,378,2957,1004,1195]},
+    {"coord":[15,"1r",2,"B",5,1284,3008,921,1175]},
+    {"coord":[15,"1r",2,"B",6,387,4117,1004,1268]},
+    {"coord":[15,"1r",2,"B",7,1257,4117,1001,1236]}]},
+{"sel":[
+    {"coord":[15,"1r",3,"C",1,2098,682,1737,2334]},
+    {"coord":[15,"1r",3,"C",2,2098,682,1737,1200]},
+    {"coord":[15,"1r",3,"C",3,2098,1812,1737,1185]},
+    {"coord":[15,"1r",3,"C",4,2098,672,917,1009]},
+    {"coord":[15,"1r",3,"C",5,2909,698,916,1175]},
+    {"coord":[15,"1r",3,"C",6,2103,1797,932,1180]},
+    {"coord":[15,"1r",3,"C",7,2903,1797,937,1196]}]},
+{"sel":[
+    {"coord":[15,"1r",4,"D",1,2111,2963,1756,2355]},
+    {"coord":[15,"1r",4,"D",2,2111,2979,1756,1175]},
+    {"coord":[15,"1r",4,"D",3,2095,4083,1772,1246]},
+    {"coord":[15,"1r",4,"D",4,2111,2974,957,1185]},
+    {"coord":[15,"1r",4,"D",5,2946,2974,921,1185]},
+    {"coord":[15,"1r",4,"D",6,2094,4094,968,1043]},
+    {"coord":[15,"1r",4,"D",7,2966,4078,881,1235]}]},
+```
+
+Quadrant A, selection 5: [https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/1270,668,923,1208/pct:70/0/native.jpg](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/1270,668,923,1208/pct:70/0/native.jpg)
+
+Quadrant A, selection 7: [https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/1250,1799,947,1207/pct:70/0/native.jpg](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/1250,1799,947,1207/pct:70/0/native.jpg)
+
+Quadrant B, selection 5: [https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/1284,3008,921,1175/pct:70/0/native.jpg](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/1284,3008,921,1175/pct:70/0/native.jpg)
+
+Quadrant B, selection 7: [https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/1257,4117,1001,1236/pct:70/0/native.jpg](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/1257,4117,1001,1236/pct:70/0/native.jpg)
+
+Quadrant C, selection 5: [https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/2909,698,916,1175/pct:70/0/native.jpg](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/2909,698,916,1175/pct:70/0/native.jpg)
+
+Quadrant C, selection 7: [https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/2903,1797,937,1196/pct:70/0/native.jpg](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/2903,1797,937,1196/pct:70/0/native.jpg)
+
+Quadrant D, selection 5: [https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/2946,2974,921,1185/pct:70/0/native.jpg](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/2946,2974,921,1185/pct:70/0/native.jpg)
+
+Quadrant D, selection 7: [https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/2966,4078,881,1235/pct:70/0/native.jpg](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/2966,4078,881,1235/pct:70/0/native.jpg)
+
+
