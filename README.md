@@ -8,9 +8,9 @@ A detailed description of these works is presented by John Lowden in his two-vol
 
 These two manuscripts were selected for inclusion in this corpus of data because (1) they represent the end of the tradition; (2) because of the direct relationship of the earlier manuscript serving as the model for the later; (3) because Fr. 167 is the longest and most complete representation of the Bible of any of the other *Bibles Moralisées*; (4) because of the accessibility of the images via IIIF API. Note that the two manuscripts collate extremely closely, but that Fr. 166 is incomplete and stops in the middle of the Book of Isaiah.
 
-The images for these manuscripts are all maintained and served directly from the resources of the Bibliothèque Nationale de France (BNF) as made available through [Gallica](https://gallica.bnf.fr/). The data in this repository parses out the structured contents of each page (illustrations and captions) as cropped selections. The coordinates for these selections can be integrated with the API of the International Image Interoperability Framework (IIIF) which these institutions have generously adopted. Permission for the re-use of these images can be granted only under the terms of Gallica and the BNF. 
+The images for these manuscripts are all maintained and served directly from the resources of the Bibliothèque Nationale de France (BNF) as made available through [Gallica](https://gallica.bnf.fr/). The data in this repository parses out the structured contents of each page (illustrations and captions) as cropped selections. The coordinates for these selections can be integrated with the API of the International Image Interoperability Framework (IIIF) which these institutions have generously adopted. 
 
-The JSON data included here is made available by Jesse D. Hurlbut under a Creative Commons license, but any project that consults this resource or its underlying data should acknowledge the use of this collection.
+Permission for the re-use of these images can be granted only under the terms of Gallica and the BNF. The JSON data included here is made available by Jesse D. Hurlbut under a Creative Commons license, but any project that consults this resource or its underlying data should acknowledge the use of this collection.
 
 **Creative Commons License**
 
