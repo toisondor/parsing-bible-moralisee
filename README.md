@@ -4,16 +4,17 @@
 
 The *Bible Moralisée* is a medieval manuscript tradition that illustrates each episode of the Bible along with accompanying moralized interpretations. 
 
-A detailed description of these works is presented by John Lowden in his two-volume study on the *Making of the Bibles Moralisées* (Penn State University Press, 2000). According to Lowden, only seven copies of this work survive today. So far, only two manuscripts are included in this repository. These are the latest copies and are both found in the Bibliothèque Nationale de France: manuscripts Fr. 167, dating from the end of the fourteenth century, and Fr. 166, which dates to the beginning of the fifteenth century. Lowden provides a detailed examination of each of these manuscripts in his first volume, pages 221-250 and 251-284 respectively.
+A detailed description of these works is presented by John Lowden in his two-volume study on the *Making of the Bibles Moralisées* (Penn State University Press, 2000). According to Lowden, only seven copies of this work survive today. So far, only two manuscripts are included in this repository. These are the latest copies and are both found in the Bibliothèque Nationale de France: manuscripts [Fr. 167](https://gallica.bnf.fr/ark:/12148/btv1b8447300c/), dating from the end of the fourteenth century, and [Fr. 166](https://gallica.bnf.fr/ark:/12148/btv1b105325870/), which dates to the beginning of the fifteenth century. Lowden provides a detailed examination of each of these manuscripts in his first volume, pages 221-250 and 251-284 respectively.
 
-These two manuscripts were selected for comparison in particular because (1) they represent the end of the tradition; (2) because of the direct relationship of the earlier manuscript serving as the model for the later; (3) because Fr. 167 is the longest and most complete representation of the Bible of any of the other *Bibles Moralisées*; (4) because of the accessibility of the images via IIIF API. Note that the two manuscripts collate extremely closely, but that Fr. 166 is incomplete and stops in the middle of the Book of Isaiah.
+These two manuscripts were selected for inclusion in this corpus of data because (1) they represent the end of the tradition; (2) because of the direct relationship of the earlier manuscript serving as the model for the later; (3) because Fr. 167 is the longest and most complete representation of the Bible of any of the other *Bibles Moralisées*; (4) because of the accessibility of the images via IIIF API. Note that the two manuscripts collate extremely closely, but that Fr. 166 is incomplete and stops in the middle of the Book of Isaiah.
 
-The images for these manuscripts are all maintained and served directly from the resources of the Bibliothèque Nationale de France (BNF) as made available through Gallica.bnf.fr. The data in this repository allows these images to be cropped and presented using the API of the International Image Interoperability Framework (IIIF) which these institutions have generously adopted. Permission for the re-use of these images can be granted only under the terms of Gallica and the BNF. 
+The images for these manuscripts are all maintained and served directly from the resources of the Bibliothèque Nationale de France (BNF) as made available through [Gallica](https://gallica.bnf.fr/). The data in this repository parses out the structured contents of each page (illustrations and captions) as cropped selections. The coordinates for these selections can be integrated with the API of the International Image Interoperability Framework (IIIF) which these institutions have generously adopted. Permission for the re-use of these images can be granted only under the terms of Gallica and the BNF. 
 
 The JSON data included here is made available by Jesse D. Hurlbut under a Creative Commons license, but any project that consults this resource or its underlying data should acknowledge the use of this collection.
 
 **Creative Commons License**
-Parsing the *Bibles Moralisée* by Jesse D. Hurlbut is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/). 
+
+Parsing the *Bible Moralisée* by Jesse D. Hurlbut is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/). 
 
 ![Creative Commons License buttons](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)
 
@@ -26,7 +27,7 @@ Both manuscripts are organized in the following way. Each page is divided into f
 
 ![Schematic of the page divided into four groups, each containing two illustrations with their captions](https://github.com/toisondor/assets/blob/main/icon-page.png)
 
-Those studying the *Bibles Moralisée* may prefer to study each pair of images together or separately. Some may be more interested in the textual captions, while others may focus on the illustrations alone. For this reason, coordinate data includes seven different croppings from each quadrant, as described below.  
+Those studying the *Bible Moralisée* may prefer to study each pair of images together or separately. Some may be more interested in the textual captions, while others may focus on the illustrations alone. For this reason, the JSON data include coordinates for seven different selections within each quadrant, as described below.  
 
 ## Corpus Scope
 The JSON data provided here contains the coordinates for cropping the digital images housed on Gallica.bnf.fr.
@@ -38,7 +39,7 @@ The JSON data provided here contains the coordinates for cropping the digital im
 The total number of images in the combined corpus is 27,398.
 
 ## Value of the Corpus
-The corpus includes illustrations for every episode of the Bible. There are exegetical interpretations for each one of these episodes. Text and illustration provide juxtaposed and sometimes differing views on each element. The textual captions appear in both Latin and Middle French, providing interesting footholds for linguistic analysis. Two different copies which are 40 or 50 years apart provide differentiating views and variation between them that is worth studying (up through Isaiah).  
+The corpus includes illustrations for every episode of the Bible. There are exegetical interpretations for each one of these episodes. Text and illustration provide juxtaposed and sometimes differing views on each element. The textual captions appear in both Latin and Middle French, providing interesting footholds for linguistic analysis. Two different copies of the *Bible Moralisée* which are 40 or 50 years apart provide differentiating views and variation between them that is worth studying (up through Isaiah).  
 
 ## Using the Data
 The API for accessing cropped images from Gallica.bnf.fr is comprised of the following elements:
