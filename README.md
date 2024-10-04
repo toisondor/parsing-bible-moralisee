@@ -1,4 +1,4 @@
-# Parsing the *Bible Moralisée*, by Jesse D. Hurlbut
+# Parsing the *Bible Moralisée*, by Jesse David Hurlbut
 *Image coordinates for subdividing source images of La Bible Moralisée on Gallica.bnf.fr*
 
 
