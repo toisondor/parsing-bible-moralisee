@@ -142,6 +142,9 @@ Having retrieved the group that includes collation 137 (the beginning of Exodus)
 
 Selection 1: [https://gallica.bnf.fr/iiif/ark:/12148/btv1b8447300c/f43/174,865,1812,2252/pct:70/0/native.jpg](https://gallica.bnf.fr/iiif/ark:/12148/btv1b8447300c/f43/174,865,1812,2252/pct:70/0/native.jpg)
 
+#### Results
+![Result of Example 1: The first Duplex selection of Exodus in Fr. 167](https://gallica.bnf.fr/iiif/ark:/12148/btv1b8447300c/f43/174,865,1812,2252/pct:15/0/native.jpg)
+
 
 ### Example 2. Parse out all the illustrations (without captions) of folio 1r of manuscript Fr. 166
 Having retrieved the four groups that appear on folio 1r from Part2_BNF-Fr166.json, we extract the coordinates for selections 5 (top image of each group) and 7 (bottom image of each group) to create a series of links to retrieve the eight images.
@@ -196,4 +199,20 @@ Quadrant D, selection 5: [https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/
 
 Quadrant D, selection 7: [https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/2966,4078,881,1235/pct:70/0/native.jpg](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/2966,4078,881,1235/pct:70/0/native.jpg)
 
+#### Results
+Fol. 1r A ![Result of Example 2 (1 of 8): Miniatures on folio 1r of manuscript Fr. 166](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/1270,668,923,1208/pct:17/0/native.jpg)
+
+Fol. 1r a ![Result of Example 2 (2 of 8): Miniatures on folio 1r of manuscript Fr. 166](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/1250,1799,947,1207/pct:17/0/native.jpg)
+
+Fol. 1r B ![Result of Example 2 (3 of 8): Miniatures on folio 1r of manuscript Fr. 166](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/1284,3008,921,1175/pct:17/0/native.jpg)
+
+Fol. 1r b ![Result of Example 2 (4 of 8): Miniatures on folio 1r of manuscript Fr. 166](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/1257,4117,1001,1236/pct:17/0/native.jpg)
+
+Fol. 1r C ![Result of Example 2 (5 of 8): Miniatures on folio 1r of manuscript Fr. 166](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/2909,698,916,1175/pct:17/0/native.jpg)
+
+Fol. 1r c ![Result of Example 2 (6 of 8): Miniatures on folio 1r of manuscript Fr. 166](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/2903,1797,937,1196/pct:17/0/native.jpg)
+
+Fol. 1r D ![Result of Example 2 (7 of 8): Miniatures on folio 1r of manuscript Fr. 166](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/2946,2974,921,1185/pct:17/0/native.jpg)
+
+Fol. 1r d ![Result of Example 2 (8 of 8): Miniatures on folio 1r of manuscript Fr. 166](https://gallica.bnf.fr/iiif/ark:/12148/btv1b105325870/f15/2966,4078,881,1235/pct:17/0/native.jpg)
 
